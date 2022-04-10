@@ -2,6 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { message } = require('statuses');
+const createReadme = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 // TODO: Create an array of questions for user input
@@ -16,56 +18,87 @@ inquirer.prompt(
         },
         {
             type: 'input',
-            message: 'How do you install your app?',
-            name: 'installation',
+            message: 'What is app used for?',
+            name: 'use',
             validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
-            message: 'Instructions to follow?',
-            name: 'instructions',
+            message: 'How to use the app?',
+            name: 'how',
             validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
-            message: 'Any credits?',
-            name: "credits",
+            message: 'How to install the app',
+            name: "install",
             validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type:'input',
-            message: 'How do you use your app?',
-            name: 'usage',
+            message: 'How to report issues?',
+            name: 'issues',
+            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
+        },
+        {
+            type:'input',
+            message: 'How to make contributions',
+            name: 'contribute',
             validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
             message: 'What license did you use?',
             name: 'license',
-            choices:['The MIT License', 'The GPL License', 'Apache license', 'GNU license', 'N/A'],
-            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
+            choices:['MIT', 'GPL', 'Apache', 'Unlicense', 'EPL'],
         },
         {
             type: 'input',
             message: 'GitHub username:',
             name: 'git',
-            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
-            message: 'E-mail',
+            message: 'What is your email?',
             name: 'email',
-            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
-
+        },
+        {
+            type: 'input',
+            message: 'Add a screenshot using ![alt text](assets/images/screenshot.png)',
+            name: 'screenshot',
         },
     ]
 )
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            return console.log(err);
+        }
+
+    console.log('Your README was generated');
+    });
+};
+// .then((data) => {
+//     console.log(data);
+//     fs.writeFile('README.md', generateMarkdown(data),
+//     error =>{
+//         if (error) {
+//             console.log('Please input all data')
+//         }
+//         console.log('Your README was generated')
+//     })
+// })
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
+};
 
 // Function call to initialize app
 init();
