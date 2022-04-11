@@ -32,6 +32,12 @@ const questions = [
             validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
+            type: 'input',
+            message: 'What are the testing instructions?',
+            name: "test",
+            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
+        },
+        {
             type:'input',
             message: 'How to report issues?',
             name: 'issues',
@@ -53,16 +59,19 @@ const questions = [
             type: 'input',
             message: 'GitHub username:',
             name: 'git',
+            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
             message: 'What is your email?',
             name: 'email',
+            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
-            message: 'Add a screenshot using ![alt text](assets/images/screenshot.png)',
+            message: 'What alt text for the screenshot?',
             name: 'screenshot',
+            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
     ];
 //);

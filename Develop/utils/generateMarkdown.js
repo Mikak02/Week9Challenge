@@ -1,11 +1,11 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// If there is no license, return an empty string or maybe some creative text deemed appropriate
 function renderLicense(license) {
   if (license ==='Apache') {
     return '![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)(https://opensource.org/licenses/Apache-2.0)'
   }
   if (license ==='No License') {
-    return 'Sigh. Now we have to bring the lawyers.'
+    return 'No License? Sigh. Now we have to bring the lawyers.'
   }
   if (license ==='MIT') {
     return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)'
@@ -28,26 +28,38 @@ function generateMarkdown(data) {
   - ${data.how}
   - ${data.git}
 
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Guidelines](#guidelines)
+  - [Testing](#testing)
+  - [Questions](#questions)
+
+  ## Installation
+  ${data.install}
+
+  ## Usage
+  ![${data.screenshot}](assets/images/screenshot.png)
+
   ## License
 
   - ${renderLicense(data.license)}
 
   Refer to [https://choosealicense.com/](https://choosealicense.com/),
 
-  ## Installation
-  ${data.install}
-
-  ## Issues
-  Report any Issues by ${data.issues}
-
-  ## Contributions
+  ## Contributing
   You can make contributions by ${data.contribute}
 
-  ## Usage
+  ## Guidelines
+  Report any Issues by ${data.issues}
 
-  ![alt text](assets/images/screenshot.png)
+  ## Testing
+  Testing Instructions are ${data.test}
 
-  ## Contact 
+  ## Questions 
   Contact by email: ${data.email} or see more work at: [${data.git}](https://github.com/${data.git}).
 `;
 }
