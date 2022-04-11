@@ -77,16 +77,6 @@ function writeToFile(fileName, data) {
     console.log('Your README was generated');
     });
 };
-// .then((data) => {
-//     console.log(data);
-//     fs.writeFile('README.md', generateMarkdown(data),
-//     error =>{
-//         if (error) {
-//             console.log('Please input all data')
-//         }
-//         console.log('Your README was generated')
-//     })
-// })
 
 // TODO: Create a function to initialize app
 function init() {
