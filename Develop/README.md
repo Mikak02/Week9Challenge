@@ -15,13 +15,13 @@
   - [Questions](#questions)
 
   ## Use
-  How to use: in terminal with command: node index.js
+  How to use: in terminal with command node index.js
 
   ## Installation
   install the folder and initiate with node index inquirer in the terminal
 
   ## Usage
-  ![screenshot](assets/images/screenshot.png)
+  ![screenshot](/assets/images/screenshot.png)
 
   ## License
 
@@ -40,3 +40,6 @@
 
   ## Questions 
   Contact by email: mikak02@gmail.com or see more work at: [mikak02](https://github.com/mikak02).
+
+  ## Video
+  [Googledrive](https://drive.google.com/file/d/1nV7wWVd3YW4p2-YLiErfkP_y6h4lm73n/view)

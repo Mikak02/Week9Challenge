@@ -44,7 +44,7 @@ function generateMarkdown(data) {
   ${data.install}
 
   ## Usage
-  ![${data.screenshot}](assets/images/screenshot.png)
+  ![${data.screenshot}](./assets/images/screenshot.png)
 
   ## License
 
