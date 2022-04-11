@@ -15,7 +15,7 @@
   - [Questions](#questions)
 
   ## Use
-  How to use: in terminal with command node index.js
+  How to use: in terminal with command: node index.js
 
   ## Installation
   install the folder and initiate with node index inquirer in the terminal
@@ -25,7 +25,7 @@
 
   ## License
 
-  - ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
+   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
 
   Refer to [https://choosealicense.com/](https://choosealicense.com/),
 
@@ -33,10 +33,10 @@
   You can make contributions by create a branch and submit a pull
 
   ## Guidelines
-  Report any Issues by email
+  Report any Issues by by email
 
   ## Testing
-  Testing Instructions are npm test
+  Testing Instructions: npm test
 
   ## Questions 
-  Contact by email: mikak02020202@gmail.com or see more work at: [mikak02](https://github.com/mikak02).
+  Contact by email: mikak02@gmail.com or see more work at: [mikak02](https://github.com/mikak02).
