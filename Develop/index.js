@@ -1,20 +1,17 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { message } = require('statuses');
-const createReadme = require('./utils/generateMarkdown.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+console.log("Answer following questions to create README file:")
 
 
 // TODO: Create an array of questions for user input
-//const questions = [];
-inquirer.prompt(
-    [
+const questions = [
         {
             type: 'input',
             message: "What's the project title?",
             name: 'title',
-            validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
+           validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
             type: 'input',
@@ -47,10 +44,10 @@ inquirer.prompt(
             validate: (value)=>{ if(value){return true} else{return 'I need a value to continue'}},
         },
         {
-            type: 'input',
+            type: 'list',
             message: 'What license did you use?',
             name: 'license',
-            choices:['MIT', 'GPL', 'Apache', 'Unlicense', 'EPL'],
+            choices: ['MIT', 'GPL', 'Apache', 'EPL', 'No License'],
         },
         {
             type: 'input',
@@ -67,8 +64,8 @@ inquirer.prompt(
             message: 'Add a screenshot using ![alt text](assets/images/screenshot.png)',
             name: 'screenshot',
         },
-    ]
-)
+    ];
+//);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
