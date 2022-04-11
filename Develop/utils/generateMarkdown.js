@@ -24,12 +24,11 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ## Description
-  - ${data.use}
-  - ${data.how}
-  - ${data.git}
+   ${data.use}
 
   ## Table of Contents
   - [Description](#description)
+  - [How to Use](#use)
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
@@ -37,6 +36,9 @@ function generateMarkdown(data) {
   - [Guidelines](#guidelines)
   - [Testing](#testing)
   - [Questions](#questions)
+
+  ## Use
+  How to use: ${data.how}
 
   ## Installation
   ${data.install}
@@ -46,7 +48,7 @@ function generateMarkdown(data) {
 
   ## License
 
-  - ${renderLicense(data.license)}
+   ${renderLicense(data.license)}
 
   Refer to [https://choosealicense.com/](https://choosealicense.com/),
 
@@ -57,7 +59,7 @@ function generateMarkdown(data) {
   Report any Issues by ${data.issues}
 
   ## Testing
-  Testing Instructions are ${data.test}
+  Testing Instructions: ${data.test}
 
   ## Questions 
   Contact by email: ${data.email} or see more work at: [${data.git}](https://github.com/${data.git}).
